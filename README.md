@@ -27,56 +27,19 @@ A comprehensive Django-based web application for managing student information an
 - Python 3.7 or higher
 - pip (Python package installer)
 
-### Installation Steps
-
-1. **Clone the repository** (if you're setting this up from scratch):
-   ```bash
-   git clone <repository-url>
-   cd student_progress
-   ```
-
-2. **Navigate to the project directory**:
-   ```bash
-   cd student_progress/student_progress
-   ```
-
-3. **Create a virtual environment** (optional but recommended):
-   ```bash
-   python -m venv venv
-   ```
-
-4. **Activate the virtual environment**:
-   - On Windows:
-     ```bash
-     venv\Scripts\activate
-     ```
-   - On macOS/Linux:
-     ```bash
-     source venv/bin/activate
-     ```
-
-5. **Install required packages**:
-   ```bash
-   pip install django
-   ```
-
-6. **Run database migrations**:
+1. **Run database migrations**:
    ```bash
    python manage.py makemigrations
    python manage.py migrate
    ```
 
-7. **Create a superuser account** (optional, for admin access):
-   ```bash
-   python manage.py createsuperuser
-   ```
 
-8. **Start the development server**:
+2. **Start the development server**:
    ```bash
    python manage.py runserver
    ```
 
-9. **Access the application**:
+3. **Access the application**:
    - Open your browser and go to `http://127.0.0.1:8000/`
    - The admin panel is available at `http://127.0.0.1:8000/admin/`
 
@@ -142,13 +105,3 @@ To modify the application:
 2. Modify `dashboard/views.py` to change business logic
 3. Edit templates in `dashboard/templates/` to change UI
 4. Update `dashboard/urls.py` to modify URL routing
-
-## Troubleshooting
-
-- If you encounter database errors, run `python manage.py makemigrations` followed by `python manage.py migrate`
-- If static files aren't loading properly, ensure you've run the development server correctly
-- For authentication issues, make sure to create a superuser account if needed
-
-## License
-
-This project is available for educational purposes. Feel free to modify and extend as needed.
