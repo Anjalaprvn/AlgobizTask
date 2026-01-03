@@ -36,10 +36,7 @@ def signup_view(request):
         # Create user
         user = User.objects.create_user(username=email, email=email, password=password)
         
-        # Create profile (without actual OTP)
-        profile = Profile.objects.create(user=user, otp='123456', is_verified=False)  # Placeholder OTP
-        
-        # Show message that OTP was sent (without actual sending)
+        # Show message that OTP was sent 
         messages.success(request, 'OTP has been sent to your email. Please verify your account.')
         return redirect('verify_otp', user_id=user.id)
     
