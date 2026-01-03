@@ -18,21 +18,18 @@ def signup_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        
-        # Check if passwords match
+    
         if password != confirm_password:
             messages.error(request, 'Passwords do not match!')
             return render(request, 'signup.html')
         
-        # Check if user already exists
+
         if User.objects.filter(email=email).exists():
             messages.error(request, 'User with this email already exists!')
             return render(request, 'signup.html')
-        
-        # Create user
+   
         user = User.objects.create_user(username=email, email=email, password=password)
         
-        # Show message that OTP was sent 
         messages.success(request, 'OTP has been sent to your email. Please verify your account.')
         return redirect('verify_otp', user_id=user.id)
     
